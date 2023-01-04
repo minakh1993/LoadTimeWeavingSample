@@ -1,0 +1,13 @@
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+
+    <weaver options="-verbose -showWeaveInfo">
+        <include within="com.tosan.http.server.starter.logger.ServiceLogger"/>
+    </weaver>
+
+    <aspects>
+        <aspect name="com.sample.demo.aspect.TestAspect"/>
+    </aspects>
+
+</aspectj>

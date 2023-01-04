@@ -3,7 +3,8 @@
 <aspectj>
 
     <weaver options="-verbose -showWeaveInfo">
-        <include within="com.tosan.http.server.starter.logger.ServiceLogger"/>
+        <include within="com.tosan.http.server.starter..*"/>
+        <include within="com.sample.demo..*"/>
     </weaver>
 
     <aspects>

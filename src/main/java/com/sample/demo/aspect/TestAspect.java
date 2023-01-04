@@ -16,9 +16,19 @@ public class TestAspect {
     public void serviceCall() {
     }
 
+    @Pointcut(value = "execution(* *(..)) && @annotation(com.sample.demo.TestAnnotation)")
+    public void testAnnotated() {
+    }
+
     @Around(value = "serviceCall()", argNames = "pjp")
     public Object log(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("aspect invocation");
+        return pjp.proceed();
+    }
+
+    @Around(value = "testAnnotated()", argNames = "pjp")
+    public Object logAnnotation(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("annotated with test annotation");
         return pjp.proceed();
     }
 }
